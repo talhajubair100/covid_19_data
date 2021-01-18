@@ -6,6 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    Home
+
+   <select>
+   {% for country in con_list %}
+
+       <option value="">
+        {{ country }}
+       </option>
+   {% endfor %}
+
+   </select>
 </body>
 </html>
