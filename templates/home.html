@@ -7,14 +7,28 @@
 </head>
 <body>
 
-   <select>
+    <form action="" method="POST">
+        {% csrf_token %}
+   <select name="selectedcountry">
    {% for country in con_list %}
 
-       <option value="">
-        {{ country }}
-       </option>
+       <option>{{ country }}</option>
    {% endfor %}
 
    </select>
+   <input type="submit" name="">
+
+</form>
+<h1>{{ selectedcountry }}</h1>
+
+<p>new: {{ new }}</p>
+<p>active: {{ active }}</p>
+<p>critical: {{ critical }}</p>
+<p>recovered: {{ recovered }}</p>
+<p>1M_pop: {{ M_pop }}</p>
+<p>total: {{ total }}</p>
+<p>deaths: {{ deaths }}</p>
+
+
 </body>
 </html>
