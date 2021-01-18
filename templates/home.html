@@ -1,34 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <form action="" method="POST">
-        {% csrf_token %}
-   <select name="selectedcountry">
-   {% for country in con_list %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-       <option>{{ country }}</option>
-   {% endfor %}
+    <title>Hello, world!</title>
+  </head>
+  <body style="background-color: black;">
 
-   </select>
-   <input type="submit" name="">
+        <h1 class="text-light text-center mt-4"><span style="color: red;"> Covid-19 </span>World Wide Data</h1>
+        <div class="container">
+                <form action="" method="POST" class="d-flex justify-content-center align-items-center my-4">
+                    {% csrf_token %}
+               <select class="form-control"  style="width: 350px;" name="selectedcountry">
+               {% for country in con_list %}
+            
+                   <option>{{ country }}</option>
+               {% endfor %}
+            
+               </select>
+               <input type="submit" value="Submit" class="btn btn-danger">
+            
+            </form> 
+            <h1 class="text-light text-center">{{ selectedcountry }}</h1>
 
-</form>
-<h1>{{ selectedcountry }}</h1>
+        </div>
+   
+        <div class="d-flex justify-content-center align-items-center my-4 text-center">
+            <div class="container" style="height: 100px; width:200px; background-color:orange">
+                <h1>{{ new }}</h1>
+                <h3>New</h3>
+            </div>
+            <div class="container" style="height: 100px; width:200px; background-color:yellow">
+                <h1>{{ active }}</h1>
+                <h3>Active</h3>
+            </div><div class="container" style="height: 100px; width:200px; background-color:red">
+                <h1>{{ critical }}</h1>
+                <h3>Critical</h3>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center text-center">
+            <div class="container" style="height: 100px; width:200px; background-color:green">
+                <h1>{{ recovered }}</h1>
+                <h3>Recovered</h3>
+            </div>
+            <div class="container" style="height: 100px; width:200px; background-color:skyblue">
+                <h1>{{ M_pop }}</h1>
+                <h3>1M_pop</h3>
+            </div><div class="container" style="height: 100px; width:200px; background-color:grey">
+                <h1>{{ deaths }}</h1>
+                <h3>Deaths</h3>
+            </div>
+        </div>
 
-<p>new: {{ new }}</p>
-<p>active: {{ active }}</p>
-<p>critical: {{ critical }}</p>
-<p>recovered: {{ recovered }}</p>
-<p>1M_pop: {{ M_pop }}</p>
-<p>total: {{ total }}</p>
-<p>deaths: {{ deaths }}</p>
+        <div class="d-flex justify-content-center align-items-center my-4 text-center">
+            <div class="container" style="height: 100px; width:200px; background-color:White">
+                <h1>{{ total }}</h1>
+                <h3>Total</h3>
+            </div>
+            
+        </div>
+          
 
 
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>
